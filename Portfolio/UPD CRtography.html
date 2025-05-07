@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(self 'https://isaacenage.github.io')" />
   <title>UPD CRTography</title>
   <style>
     html, body {
@@ -12,7 +13,7 @@
       width: 100%;
       overflow: hidden;
       background: #f4f4f4;
-      font-family: sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     iframe {
@@ -30,7 +31,22 @@
   <iframe
     src="https://isaacenage.github.io/UPD-CRTography/"
     title="UPD CRTography"
-    allow="geolocation"
+    allow="geolocation *"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"
   ></iframe>
+  
+  <script>
+    // Safari-specific geolocation permission handler
+    if (navigator.permissions) {
+      navigator.permissions.query({name: 'geolocation'}).then(permissionStatus => {
+        permissionStatus.onchange = () => {
+          if (permissionStatus.state === 'granted') {
+            window.location.reload();
+          }
+        };
+      });
+    }
+  </script>
 </body>
 </html>
