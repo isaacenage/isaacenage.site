@@ -2,84 +2,91 @@
 <html lang="en">
 
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Zaxus — Zac's Nexus, the digital space of Isaac Enage. Explore a curated portfolio highlighting his journey and expertise in geospatial solutions, data analytics, and web development.">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/zwlogo.png">
-    <title>Zaxus</title>
+    <meta name="description" content="Isaac Melchor Enage - GIS Specialist & Geospatial Developer portfolio featuring interactive maps, spatial data analysis projects, and web mapping solutions. 5+ years experience in geospatial technologies and data visualization.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/zwlogo.png">
+    
+    <!-- Title Optimization -->
+    <title>Zaxus | Isaac Enage's Nexus</title>
 
-  <!-- Cursor Styles -->
-  <style type="text/css">
-    * {
-        cursor: none !important;
+    <!-- Structured Data Improvements -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Isaac Melchor Enage",
+        "url": "https://isaacenage.xyz",
+        "image": "https://isaacenage.xyz/assets/images/zwlogo.png",
+        "jobTitle": "Senior GIS Specialist",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Ayala Land - AKL Properties, Inc.",
+            "sameAs": "https://www.ayalaland.com.ph"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University of the Philippines - Diliman"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Philippines"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/isaacenage",
+            "https://github.com/isaacenage",
+            "https://gitlab.com/isaacenage"
+        ],
+        "description": "Professional portfolio of Isaac Enage showcasing expertise in GIS development, spatial data analysis, and web mapping solutions. Specializing in QGIS, Python, and geospatial web applications."
     }
+    </script>
 
-    .custom-cursor {
-        position: fixed;
-        pointer-events: none;
-        width: 32px;
-        height: 32px;
-        background: url('https://ani.cursors-4u.net/cursors/images12/cur1135.png') no-repeat center center;
-        background-size: contain;
-        animation: rotateCursor 1s linear infinite;
-        z-index: 9999;
-        filter: drop-shadow(0 0 3px rgba(255,255,255,0.2));
-    }
-
-    .custom-cursor.fast-rotate {
-        animation-duration: 0.03s;
-        filter: 
-            brightness(3)
-            drop-shadow(0 0 5px rgba(255,255,255,0.5))
-            drop-shadow(0 0 10px rgba(255,255,255,0.3));
-    }
-
-    @keyframes rotateCursor {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .cursor-particle {
-        position: fixed;
-        pointer-events: none;
-        border-radius: 50%;
-        animation: particleFade 0.8s ease-out forwards;
-        z-index: 9997;
-    }
-
-    .smoke-particle {
-        width: 12px;
-        height: 12px;
-        background: radial-gradient(circle, 
-            rgba(255,255,255,0.9) 10%, 
-            rgba(200,200,255,0.4) 50%,
-            transparent 80%);
-        filter: blur(2px);
-        z-index: 9998;
-    }
-
-    @keyframes particleFade {
-        0% { 
-            transform: scale(0.8) translate(0, 0);
-            opacity: 0.9;
+    <!-- Cursor Style Improvements -->
+    <style>
+        /* Move cursor styles to external CSS if possible */
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            width: 32px;
+            height: 32px;
+            background: url('https://ani.cursors-4u.net/cursors/images12/cur1135.png') no-repeat center center;
+            background-size: contain;
+            animation: rotateCursor 2s linear infinite;
+            z-index: 9999;
         }
-        100% { 
-            transform: scale(1.8) translate(var(--tx), var(--ty));
-            opacity: 0;
-        }
-    }
-</style>
 
-    <!-- Bootstrap min css -->
+        @keyframes rotateCursor {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Consider accessibility - provide fallback */
+        @media (prefers-reduced-motion: reduce) {
+            .custom-cursor {
+                animation: none;
+            }
+        }
+    </style>
+
+    <!-- Resource Loading Optimization -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//swiperjs.com">
+    
+    <!-- CSS Loading Order Fix -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
     <link rel="stylesheet" href="assets/css/plugins/swiper.css">
     <link rel="stylesheet" href="assets/css/plugins/odometer.css">
     <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <!-- custom css -->
+    <!-- Main CSS Last -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>    
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://isaacenage.xyz" />
 </head>
 
 <body class="spybody index-11" data-spy="scroll" data-bs-target=".navbar-example2" data-offset="150">
@@ -191,7 +198,7 @@
                                     <li class="nav-item"><a class="smoth-animation" href="#service">Services</a></li>
                                     <li class="nav-item"><a class="smoth-animation" href="#portfolio">Portfolio</a></li>
                                     <li class="nav-item"><a class="smoth-animation" href="#resume">Resume</a></li>
-                                    <li class="nav-item"><a class="smoth-animation" href="#blog">Blog</a></li>
+                                    <li class="nav-item"><a class="smoth-animation" href="#review">Reviews</a></li>
                                     <li class="nav-item"><a class="smoth-animation" href="#contacts">Contact</a></li>
                                 </ul>
                             </nav>
@@ -204,6 +211,7 @@
                                     <a href="https://ph.linkedin.com/in/ivenage" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                                     <a href="https://www.x.com/isaacwork0105" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                                     <a href="https://www.facebook.com/isaacenagework" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="https://www.github.com/isaacenage" target="_blank"><i class="fa-brands fa-github"></i></a>
                                 </div>
                             </div>
 
@@ -243,19 +251,19 @@
                     <li><a class="smoth-animation" href="#service">Services</a></li>
                     <li><a class="smoth-animation" href="#portfolio">Portfolio</a></li>
                     <li><a class="smoth-animation" href="#resume">Resume</a></li>
-                    <li><a class="smoth-animation" href="#pricing">Pricing</a></li>
-                    <li><a class="smoth-animation" href="#blog">Blog</a></li>
+                    <li><a class="smoth-animation" href="#review">Reviews</a></li>
                     <li><a class="smoth-animation" href="#contacts">Contact</a></li>
                 </ul>
 
                 <!-- social sharea area -->
                 <div class="social-wrapper mt--40">
-                    <span class="subtitle">find with me</span>
+                    <span class="subtitle">find me on </span>
                     <div class="social-link">
                         <a href="https://instagram.com/isaacenagework" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://ph.linkedin.com/in/ivenage" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="https://www.x.com/isaacwork0105" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://www.facebook.com/isaacenagework" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.github.com/isaacenage" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
                 <!-- end -->
@@ -509,15 +517,15 @@
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-2.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Showcase of My Projects</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -525,20 +533,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-3.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Professional Showcase</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Professional Showcase</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -546,21 +554,21 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-4.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-detail.html">My
                                                     Journey as a Creator</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -568,21 +576,21 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-5.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Journey Through My Work</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -590,21 +598,21 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-6.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Portfolio of Art & Dedication</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -612,7 +620,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
                         </div>
@@ -685,15 +693,14 @@
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-4.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Professional Portfolio</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -701,20 +708,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-3.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Transforming Ideas into Reality</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Transforming Ideas into Reality</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -722,20 +728,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-2.png" alt="tab-image">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">
                                     <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Unveiling Potential</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Unveiling Potential</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -743,7 +749,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
                         </div>
@@ -753,15 +759,14 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-1.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Portfolio of Innovation</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -769,21 +774,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-2.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Showcase of My Projects</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -791,20 +795,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-3.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Professional Showcase</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Professional Showcase</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -812,21 +815,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-4.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Journey as a Creator</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -834,21 +836,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-5.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Journey Through My Work</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -856,21 +857,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-6.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Portfolio of Art & Dedication</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -878,7 +878,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
                         </div>
@@ -888,15 +888,14 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-7.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Journey Through My Work</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -904,21 +903,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-6.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Showcase of My Projects</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -926,21 +924,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-5.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Journey as a Creator</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -948,21 +945,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-4.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Professional Portfolio</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -970,20 +966,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-3.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Transforming Ideas into Reality</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Transforming Ideas into Reality</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -991,20 +986,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-2.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Unveiling Potential</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Unveiling Potential</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1012,7 +1006,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
                         </div>
@@ -1022,15 +1016,14 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-7.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Journey Through My Work</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1038,21 +1031,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-6.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">A
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">A
                                                     Showcase of My Projects</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1060,21 +1052,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-5.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Journey as a Creator</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1082,21 +1073,20 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-4.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">My
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">My
                                                     Professional Portfolio</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1104,20 +1094,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-3.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Transforming Ideas into Reality</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Transforming Ideas into Reality</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1125,20 +1114,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="tmp-portfolio tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                    <img src="assets/images/latest-portfolio/tab-image-2.png" alt="tab-image">
-                                    <div class="portfolio-card-content-wrap">
+                                    <img src="assets/images/placeholder.jpg" alt="tab-image">                                    <div class="portfolio-card-content-wrap">
                                         <div class="content-left">
                                             <p class="portfoli-card-para">Development</p>
-                                            <h3 class="portfolio-card-title animated fadeIn"><a href="project-details.html">Unveiling Potential</a></h3>
+                                            <h3 class="portfolio-card-title animated fadeIn"><a href="#portfolio">Unveiling Potential</a></h3>
                                         </div>
                                         <div class="portfolio-btn">
-                                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                                            <a href="#portfolio" class="tmp-arrow-icon-btn">
                                                 <div class="btn-inner">
                                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
@@ -1146,7 +1134,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a href="project-details.html" class="over_link"></a>
+                                    <a href="#portfolio" class="over_link"></a>
                                 </div>
                             </div>
                         </div>
@@ -1239,85 +1227,78 @@
     <!-- Tpm Education Experience Area End -->
 
 
-    <!-- Tpm Blog and news Area Start -->
-    <section class="blog-and-news-are tmp-section-gap" id="blog">
-        <div class="container">
-            <div class="section-head mb--60">
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">Blog and news</span>
-                </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Elevating Personal
-                    Branding the <br> through Powerful Portfolios</h2>
+<!-- Tpm Reviews Slider Area Start -->
+<section class="reviews-slider-area tmp-section-gap" id="review">
+    <div class="container-fluid">
+        <div class="row color-bg">
+            <!-- Left Image Column -->
+            <div class="col-md-6 nopadding features-intro-img">
+                <div class="review-image" style="background-image: url('assets/images/testimonial/zachdev.png')"></div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="img-box">
-                            <a href="blog-details.html">
-                                <img class="w-100" src="assets/images/blog/blog-img-1.jpg" alt="Blog Thumbnail">
-                            </a>
-                            <ul class="blog-tags">
-                                <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
-                                <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
-                            </ul>
-                        </div>
-                        <div class="blog-content-wrap">
-                            <h3 class="blog-title"><a class="link" href="blog-details.html">Inspiring the World, One
-                                    Project at a
-                                    Time for the
-                                    man</a></h3>
-                            <div class="more-btn tmp-link-animation">
-                                <a href="blog-details.html" class="read-more-btn">Read More <span class="read-more-icon"><i
-                            class="fa-solid fa-angle-right"></i></span></a>
-                            </div>
-                        </div>
+
+            <!-- Reviews Slider Column -->
+            <div class="col-md-6 nopadding review-slider-content">
+                <div class="section-head mb--60">
+                    <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
                     </div>
+                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Past Perspectives</h2>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <div class="img-box">
-                            <a href="blog-details.html">
-                                <img class="w-100" src="assets/images/blog/blog-img-2.jpg" alt="Blog Thumbnail">
-                            </a>
-                            <ul class="blog-tags">
-                                <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
-                                <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
-                            </ul>
-                        </div>
-                        <div class="blog-content-wrap">
-                            <h3 class="blog-title"><a class="link" href="blog-details.html">Let’s bring your ideas to life! Contact me, and let’s</a></h3>
-                            <div class="more-btn tmp-link-animation">
-                                <a href="blog-details.html" class="read-more-btn">Read More <span class="read-more-icon"><i
-                            class="fa-solid fa-angle-right"></i></span></a>
+                <div id="reviewSlider">
+                    <ul class="slides">
+                        <li class="slide active">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="review-text">"He played a vital role in our efforts to map out cellular demand and competitor presence across key areas in the Philippines. He helped enabled us to visualize complex market data with clarity, supporting strategic decisions for new cell site locations. His insights directly contributed to more data-driven, location-based planning initiatives."</p>
+                                <div class="client-info">
+                                    <span class="client-name">Ralph Mendoza</span>
+                                    <span class="client-role">Project Manager, Globe Telecom</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <div class="img-box">
-                            <a href="blog-details.html">
-                                <img class="w-100" src="assets/images/blog/blog-img-3.jpg" alt="Blog Thumbnail">
-                            </a>
-                            <ul class="blog-tags">
-                                <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
-                                <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>April 10</li>
-                            </ul>
-                        </div>
-                        <div class="blog-content-wrap">
-                            <h3 class="blog-title"><a class="link" href="blog-details.html">Each one showcases my approach and dedication man</a></h3>
-                            <div class="more-btn tmp-link-animation">
-                                <a href="blog-details.html" class="read-more-btn">Read More <span class="read-more-icon"><i
-                            class="fa-solid fa-angle-right"></i></span></a>
+                        </li>
+                        <li class="slide">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="review-text">"Isaac brings a unique blend of precision and innovation to every GIS task. During our collaboration on transmission line projects, his spatial analysis skills and attention to geodata accuracy played a crucial role in streamlining our route planning. His professionalism and technical insight made him a reliable asset in high-stakes infrastructure projects."</p>
+                                <div class="client-info">
+                                    <span class="client-name">Andrew Ira San Juan</span>
+                                    <span class="client-role">Electrical Engineer, National Grid Corporation of the Philippines</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                        <li class="slide">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="review-text">"An exceptionally admirable individual, he consistently demonstrates a remarkable capacity for critical thinking in every task entrusted to him. His analytical approach enables him to devise effective solutions and develop strategies that enhance efficiency and accelerate productivity in the workplace."</p>
+                                <div class="client-info">
+                                    <span class="client-name">Edgar de Jesus</span>
+                                    <span class="client-role">Senior GIS Specialist, Solar Philippines</span>
+                                </div>
+                            </div>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Tpm Blog and news Area End -->
-
+    </div>
+</section>
+<!-- Tpm Reviews Slider Area End -->
 
     <!-- Tpm Get In touch start -->
     <section class="get-in-touch-area" id="contacts">
@@ -1590,6 +1571,7 @@
         });
     </script>
 
+
 <script>
     // Initialize EmailJS
     (function() {
@@ -1630,6 +1612,44 @@
         }
     });
 </script>
+
+
+<!-- JavaScript with Fade Transition -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('#reviewSlider .slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Fade out current slide
+            slides[currentSlide].classList.remove('active');
+            
+            // Fade in new slide
+            setTimeout(() => {
+                slides[index].classList.add('active');
+                currentSlide = index;
+            }, 1000); // Matches CSS transition duration
+        }
+    
+        function nextSlide() {
+            const newIndex = (currentSlide + 1) % slides.length;
+            showSlide(newIndex);
+        }
+    
+        // Start auto-sliding
+        let sliderInterval = setInterval(nextSlide, 3000);
+    
+        // Pause on hover
+        const sliderContainer = document.getElementById('reviewSlider');
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(sliderInterval));
+        sliderContainer.addEventListener('mouseleave', () => {
+            sliderInterval = setInterval(nextSlide, 7000);
+        });
+    
+        // Initialize first slide
+        slides[0].classList.add('active');
+    });
+    </script>
 
     <script>
         particlesJS('particles-js',
@@ -1755,6 +1775,4 @@
     </script>
 </body>
 
-
-<!-- Mirrored from themes-park.net/product/html/reeni/index-11.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Apr 2025 15:51:54 GMT -->
 </html>
