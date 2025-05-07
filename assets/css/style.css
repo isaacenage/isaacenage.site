@@ -16245,6 +16245,96 @@ Section Head
   margin-left: 10px;
 }
 
+/* Reviews Slider Area */
+.reviews-slider-area {
+  --color-border: #e0e0e0;
+  --color-heading: #ffffff;
+  --color-gray: #666;
+  --color-primary: #your-brand-color;
+}
+
+.review-image {
+    height: 100%;
+    background-size:cover;  /* Changed from cover */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: var(--color-gray-2); /* Fallback color */
+}
+
+.review-slider-content {
+  padding: 60px;
+  background: var(--color-gray-2);
+}
+
+.review-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.review-rating {
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.review-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-heading);
+  margin-bottom: 25px;
+}
+
+.client-info {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 15px;
+}
+
+.client-name {
+  font-weight: 700;
+  color: var(--color-heading);
+  display: block;
+}
+
+.client-role {
+  color: var(--color-gray);
+  font-size: 14px;
+}
+
+/* Fade Transition Styles */
+#reviewSlider .slides {
+  position: relative;
+  min-height: 400px; /* Match your content height */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: all;
+  position: relative; /* Only for active slide */
+}
+
+@media (max-width: 991px) {
+  .review-image {
+      height: 400px;
+  }
+  
+  .review-slider-content {
+      padding: 40px 30px;
+  }
+  
+  #reviewSlider .slides {
+      min-height: 300px; /* Adjust for mobile */
+  }
+}
+
 /*=========================
   Blog Classic Card
   =========================*/
