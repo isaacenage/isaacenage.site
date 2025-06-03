@@ -79,9 +79,9 @@
                         </div>
                         <div class="col-md-7">
                             <div class="plugin-info">
-                                <h1 class="plugin-title">Title Plotter – Philippine Land Titles</h1>
+                                <h1 class="plugin-title">Title Plotter PH</h1>
                                 <div class="plugin-meta">
-                                    <span class="plugin-id">ID: 8471</span>
+                                    <span class="plugin-id">ID: 3928</span>
                                     <div class="plugin-rating">
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
@@ -99,8 +99,6 @@
                                     <span class="btn-text">
                                         <i class="fa-solid fa-download" style="margin-right: 8px;"></i>Download
                                     </span>
-                                    <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
-                                    <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
                                 </span>
                             </a>
                         </div>
@@ -118,6 +116,9 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="versions-tab" data-bs-toggle="tab" data-bs-target="#versions" type="button" role="tab" aria-controls="versions" aria-selected="false">Versions</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="how-to-use-tab" data-bs-toggle="tab" data-bs-target="#how-to-use" type="button" role="tab" aria-controls="how-to-use" aria-selected="false">How to Use</button>
                         </li>
                     </ul>
 
@@ -138,53 +139,6 @@
                                     <li>Plots directly onto the QGIS map canvas</li>
                                     <li>Blocks projection in EPSG:4326 for data integrity</li>
                                     <li>Scrollable UI with zoom-to-layer preview and pan controls</li>
-                                </ul>
-
-                                <h2>How to Use TitlePlotterPH</h2>
-                                
-                                <div class="tutorial-section">
-                                    <h3>Step 1: Install the Plugin</h3>
-                                    <p>Download the plugin ZIP from this website. Open QGIS and go to <strong>Plugins > Manage and Install Plugins > Install from ZIP</strong>. After installing, you will see the plugin listed and activated like below:</p>
-                                    <img src="install.png" alt="Installation UI" class="step-img">
-                                    
-                                    <h3>Step 2: Input the Technical Description</h3>
-                                    <p>Open the plugin panel. Manually input the technical description of the title in the input boxes using the format:</p>
-                                    <p><code>N XX XX E DISTANCE</code></p>
-                                    <p>Example: <code>N 57 32 E - 4479.73</code></p>
-                                    <p>See input example below:</p>
-                                    <img src="step1.png" alt="Bearing and Distance Input" class="step-img">
-                                    
-                                    <h3>Step 3: Select Tie Point</h3>
-                                    <p>After entering all bearings and distances, click <strong>Select Tie Point</strong> at the upper right. This opens a blank window where you can search a local database of tie points (based on what has been acquired so far).</p>
-                                    <img src="step2.png" alt="Tie Point Selection Window" class="step-img">
-                                    <p>You'll need to fill in the <strong>Tie Point Name</strong>, <strong>Municipality</strong>, and <strong>Province</strong>. Always refer to the title document (TCT) for these details. Once selected, click <strong>Select</strong> and the Northing and Easting will automatically populate in the main dialogue.</p>
-                                    
-                                    <h3>Step 4: Preview the Lot Geometry</h3>
-                                    <p>Once all fields are filled, the preview panel will automatically generate a polygon outline of the lot. This helps verify correctness before plotting:</p>
-                                    <img src="step3.png" alt="Lot Geometry Preview" class="step-img">
-                                    
-                                    <h3>Step 5: Plot the Polygon to Map</h3>
-                                    <p>Click the <strong>Plot</strong> button to render the polygon directly on the QGIS map canvas.</p>
-                                    <div class="alert alert-warning">
-                                        <strong>⚠️ Important:</strong> Do <strong>not</strong> use <code>EPSG:4326 (WGS 84)</code> as your projection. Use a <strong>projected CRS</strong> such as:
-                                        <ul>
-                                            <li>PRS92 Zone I–IV</li>
-                                            <li>Luzon 1911 / Philippines zone systems</li>
-                                        </ul>
-                                    </div>
-                                    <img src="step4.png" alt="Final Plotting Output" class="step-img">
-                                </div>
-
-                                <h2>Installation</h2>
-                                <ul>
-                                    <li>Clone or download the GitHub repo</li>
-                                    <li>Unzip the downloaded file into your QGIS plugins directory:
-                                        <ul>
-                                            <li>Windows: `C:/Users/YourName/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins/`</li>
-                                            <li>macOS: `~/.qgis3/python/plugins/`</li>
-                                        </ul>
-                                    </li>
-                                    <li>Open QGIS and enable the plugin via <strong>Plugins > Manage and Install Plugins</strong></li>
                                 </ul>
                             </div>
                         </div>
@@ -266,6 +220,181 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- How to Use Tab -->
+                        <div class="tab-pane fade" id="how-to-use" role="tabpanel" aria-labelledby="how-to-use-tab">
+                            <div class="tab-content-wrapper">
+                                <h2>How to Use TitlePlotterPH</h2>
+                                
+                                <div class="tutorial-section">
+                                    <h3>Step 1: Install the Plugin</h3>
+                                    <p>Download the plugin ZIP from this website. Open QGIS and go to <strong>Plugins > Manage and Install Plugins > Install from ZIP</strong>. After installing, you will see the plugin listed and activated like below:</p>
+                                    <img src="install.png" alt="Installation UI" class="step-img">
+                                    
+                                    <h3>Step 2: Input the Technical Description</h3>
+                                    <p>Open the plugin panel. Manually input the technical description of the title in the input boxes using the format:</p>
+                                    <p><code>N XX XX E DISTANCE</code></p>
+                                    <p>Example: <code>N 57 32 E - 4479.73</code></p>
+                                    <p>See input example below:</p>
+                                    <img src="step1.png" alt="Bearing and Distance Input" class="step-img">
+                                    
+                                    <h3>Step 3: Select Tie Point</h3>
+                                    <p>After entering all bearings and distances, click <strong>Select Tie Point</strong> at the upper right. This opens a blank window where you can search a local database of tie points (based on what has been acquired so far).</p>
+                                    <img src="step2.png" alt="Tie Point Selection Window" class="step-img">
+                                    <p>You'll need to fill in the <strong>Tie Point Name</strong>, <strong>Municipality</strong>, and <strong>Province</strong>. Always refer to the title document (TCT) for these details. Once selected, click <strong>Select</strong> and the Northing and Easting will automatically populate in the main dialogue.</p>
+                                    
+                                    <h3>Step 4: Preview the Lot Geometry</h3>
+                                    <p>Once all fields are filled, the preview panel will automatically generate a polygon outline of the lot. This helps verify correctness before plotting:</p>
+                                    <img src="step3.png" alt="Lot Geometry Preview" class="step-img">
+                                    
+                                    <h3>Step 5: Plot the Polygon to Map</h3>
+                                    <p>Click the <strong>Plot</strong> button to render the polygon directly on the QGIS map canvas.</p>
+                                    <div class="alert alert-warning">
+                                        <strong>Important:</strong> Do <strong>not</strong> use <code>EPSG:4326 (WGS 84)</code> as your projection. Use a <strong>projected CRS</strong> such as:
+                                        <ul>
+                                            <li>PRS92 Zone I–IV</li>
+                                            <li>Luzon 1911 / Philippines zone systems</li>
+                                        </ul>
+                                    </div>
+                                    <img src="step4.png" alt="Final Plotting Output" class="step-img">
+                                </div>
+
+                                <h2>Using the OCR Reader for TCT Titles</h2>
+                                <div class="tutorial-section">
+                                    <p>The plugin includes an OCR (Optical Character Recognition) feature to automatically extract technical descriptions from scanned TCT documents. Here's how to use it:</p>
+                                    
+                                    <ol>
+                                        <li>Open the plugin panel in QGIS.</li>
+                                        <li>Click the "OCR Reader" button on the toolbar.</li>
+                                        <li>Upload a scanned image of a Philippine land title (TCT).</li>
+                                        <li>The plugin uses <code>pytesseract</code> to automatically extract bearings and distances.</li>
+                                        <li>Review the parsed data on the right panel — edit if needed.</li>
+                                        <li>Click "Generate Polygon" to preview the lot on the QGIS canvas.</li>
+                                        <li>Optionally adjust tiepoints before finalizing.</li>
+                                        <li>Save or export the layer as needed.</li>
+                                    </ol>
+
+                                    <div class="alert alert-info">
+                                        <strong>Tip:</strong> For best results, ensure your scanned TCT document is clear and properly oriented. The OCR accuracy depends on the quality of the scanned image.
+                                    </div>
+                                </div>
+
+                                <h2>How to Use the OCR Feature in Title Plotter</h2>
+                                <div class="tutorial-section">
+                                    <p>This guide walks you through enabling and using the <strong>TCT OCR feature</strong> in the <em>Title Plotter - Philippine Land Titles</em> QGIS plugin. This feature lets you upload a scanned copy or screenshot of a land title's technical description, and automatically extracts the bearings and distances for plotting—no need to type them manually.</p>
+
+                                    <h3>Step 1: Install Tesseract OCR</h3>
+                                    <p>Tesseract is the engine used to recognize text from images. Follow these steps to install it:</p>
+
+                                    <ol>
+                                        <li>
+                                            <strong>Download the Tesseract Installer</strong> (Windows)
+                                            <ul>
+                                                <li>Go to: <a href="https://github.com/UB-Mannheim/tesseract/wiki" target="_blank">https://github.com/UB-Mannheim/tesseract/wiki</a></li>
+                                                <li>Download the latest <code>.exe</code> file under "Tesseract at UB Mannheim".</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Install to This Path</strong>:
+                                            <div class="flex justify-between items-start bg-[#1a1a1a] text-white font-mono text-sm rounded-md px-4 py-3 w-full">
+                                                <code class="whitespace-pre-wrap break-all">C:\Program Files\Tesseract-OCR</code>
+                                                <button class="copy-btn text-gray-400 hover:text-pink-500 cursor-pointer">📋</button>
+                                            </div>
+                                        </li>
+                                        <li>No need to add to PATH manually, as the plugin sets it internally.</li>
+                                    </ol>
+
+                                    <h3>Step 2: Install Python Libraries in QGIS Python</h3>
+                                    <p>Tesseract requires support libraries like <code>pytesseract</code>, <code>Pillow</code>, and <code>opencv-python</code>.</p>
+
+                                    <ol>
+                                        <li><strong>Open CMD (Command Prompt)</strong></li>
+                                        <li>
+                                            <strong>Run QGIS Python Pip Installer</strong>:
+                                            <div class="flex justify-between items-start bg-[#1a1a1a] text-white font-mono text-sm rounded-md px-4 py-3 w-full">
+                                                <code class="whitespace-pre-wrap break-all">"C:\OSGeo4W\apps\Python312\python.exe" -m pip install pytesseract pillow opencv-python numpy</code>
+                                                <button class="copy-btn text-gray-400 hover:text-pink-500 cursor-pointer">📋</button>
+                                            </div>
+                                            <div class="alert alert-info">
+                                                <strong>Note:</strong> Adjust the path if your QGIS installation uses a different Python version.
+                                            </div>
+                                        </li>
+                                    </ol>
+
+                                    <h3>Step 3: Verify Installation</h3>
+                                    <p>In QGIS:</p>
+
+                                    <ol>
+                                        <li>Go to <strong>Plugins → Python Console</strong></li>
+                                        <li>Paste and run:
+                                            <div class="flex justify-between items-start bg-[#1a1a1a] text-white font-mono text-sm rounded-md px-4 py-3 w-full">
+                                                <code class="whitespace-pre-wrap break-all">import pytesseract
+from PIL import Image
+import cv2
+import numpy as np</code>
+                                                <button class="copy-btn text-gray-400 hover:text-pink-500 cursor-pointer">📋</button>
+                                            </div>
+                                        </li>
+                                    </ol>
+
+                                    <p>If no errors appear, you're good to go.</p>
+
+                                    <h3>Step 4: Using the OCR Feature in the Plugin</h3>
+                                    <ol>
+                                        <li>Open the plugin via <strong>Plugins → Title Plotter - Philippine Land Titles</strong></li>
+                                        <li>Click the <strong>Upload TCT Image</strong> button</li>
+                                        <li>A new OCR dialog window will appear.</li>
+                                    </ol>
+
+                                    <p>In the OCR window:</p>
+                                    <ul>
+                                        <li><strong>Upload Image</strong> – choose a screenshot/photo from file</li>
+                                        <li><strong>Paste from Clipboard</strong> – paste an image you copied</li>
+                                        <li><strong>Preview</strong> – shows the image</li>
+                                        <li><strong>Done</strong> – extracts bearing-distance info using OCR</li>
+                                        <li><strong>Cancel</strong> – closes the dialog</li>
+                                    </ul>
+
+                                    <h3>How the Plugin Interprets OCR</h3>
+                                    <ul>
+                                        <li>It looks for the starting keyword:
+                                            <div class="flex justify-between items-start bg-[#1a1a1a] text-white font-mono text-sm rounded-md px-4 py-3 w-full">
+                                                <code class="whitespace-pre-wrap break-all">Beginning at a point marked...</code>
+                                                <button class="copy-btn text-gray-400 hover:text-pink-500 cursor-pointer">📋</button>
+                                            </div>
+                                        </li>
+                                        <li>Then extracts the tiepoint (coordinates) and distances like:
+                                            <div class="flex justify-between items-start bg-[#1a1a1a] text-white font-mono text-sm rounded-md px-4 py-3 w-full">
+                                                <code class="whitespace-pre-wrap break-all">N 45 30 E - 100.50  
+S 12 00 W - 98.75</code>
+                                                <button class="copy-btn text-gray-400 hover:text-pink-500 cursor-pointer">📋</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p>Extracted values are filled automatically into the input boxes.</p>
+
+                                    <h3>Notes and Tips</h3>
+                                    <ul>
+                                        <li>OCR works best on clean, typed screenshots</li>
+                                        <li>You can manually correct misread digits after extraction</li>
+                                        <li>Handwritten or custom formats may not be recognized</li>
+                                    </ul>
+
+                                    <div class="alert alert-warning">
+                                        <strong>Troubleshooting:</strong> If issues arise, check:
+                                        <ul>
+                                            <li>Tesseract is installed at <code>C:\Program Files\Tesseract-OCR</code></li>
+                                            <li>Python dependencies are installed in QGIS Python</li>
+                                            <li>The uploaded image is legible</li>
+                                        </ul>
+                                    </div>
+
+                                    <p>For updates or issues:<br>
+                                    <a href="https://github.com/isaacenage/TitlePlotterPH" target="_blank">https://github.com/isaacenage/TitlePlotterPH</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -284,8 +413,6 @@
                             <span class="btn-text">
                                 <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i>Submit Feedback
                             </span>
-                            <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
-                            <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
                         </span>
                     </button>
                 </div>
@@ -626,6 +753,14 @@
             `;
             return commentElement;
         }
+
+        // Copy-to-clipboard for new code blocks
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.parentElement.querySelector('code').innerText;
+                navigator.clipboard.writeText(code);
+            });
+        });
     </script>
 
     <style>
@@ -637,21 +772,132 @@
             overflow: hidden;
         }
 
-        .plugin-header {
-            padding: 2rem;
-            border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+        /* Standardize Typography */
+        /* Headers (excluding main title and navbar) */
+        h2, h3, h4, .section-title, .tab-content-wrapper h2, .tutorial-section h3 {
+            font-family: var(--font-secondary);
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 1rem;
         }
 
+        /* Body Text */
+        p, .plugin-description, .detail-value, .comment-text, .alert, .tutorial-section p, 
+        li, .detail-label, .detail-item, .code-block, .code-block code, .code-block pre,
+        strong, code {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 400;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        /* Main Title (keep original size) */
+        .plugin-title {
+            font-size: 60px;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+            color: #ffffff;
+        }
+
+        /* Code elements */
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 1.5rem; /* text-2xl */
+            background: rgba(255, 0, 0, 0.1);
+            color: #ff0000;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Refactored code block layout and style */
+        .code-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem; /* text-sm */
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            box-shadow: none;
+            border: none;
+        }
+
+        .code-block pre {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: inherit;
+            font-size: inherit;
+            font-family: inherit;
+            flex: 1 1 auto;
+            min-width: 0;
+            white-space: pre;
+            word-break: break-all;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            background: transparent;
+            color: inherit;
+            font-size: inherit;
+            font-family: inherit;
+            padding: 0;
+            border: none;
+        }
+
+        .code-block .copy-button {
+            margin-left: 1rem;
+            margin-top: 0.125rem;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            transition: color 0.2s;
+            box-shadow: none;
+            filter: none !important;
+            padding: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .code-block .copy-button:hover {
+            color: #ec4899; /* Tailwind pink-500 */
+            background: none;
+        }
+
+        .code-block .copy-tooltip {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .code-block .copy-tooltip.show {
+            opacity: 1;
+        }
+
+        /* Plugin Logo Styles */
         .plugin-logo {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
-        }
-
-        .plugin-title {
-            font-size: 2rem;
-            margin: 0 0 0.5rem;
-            color: #ffffff;
         }
 
         .plugin-meta {
@@ -706,17 +952,6 @@
             width: 100%;
             height: 2px;
             background: #ff0000;
-        }
-
-        .tab-content-wrapper {
-            padding: 2rem 0;
-            color: #ffffff;
-        }
-
-        .tab-content-wrapper h2 {
-            color: #ffffff;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
         }
 
         .tab-content-wrapper ul, 
@@ -887,13 +1122,6 @@
             min-width: 1.5rem;
             text-align: center;
             font-size: 0.9rem;
-        }
-
-        .comment-text {
-            color: #ffffff;
-            margin: 0.5rem 0;
-            line-height: 1.5;
-            font-size: 0.95rem;
         }
 
         .comment-actions {
@@ -1083,14 +1311,6 @@
             margin: 2rem 0;
         }
 
-        .tutorial-section h3 {
-            color: #ff0000;
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
-        }
-
         .tutorial-section p {
             color: #888;
             margin-bottom: 1rem;
@@ -1098,11 +1318,12 @@
         }
 
         .tutorial-section code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 1.25rem; /* text-xl */
             background: rgba(255, 0, 0, 0.1);
             color: #ff0000;
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
-            font-family: monospace;
         }
 
         .step-img {
@@ -1289,43 +1510,62 @@
         .btn-text i {
             font-size: 1rem;
             vertical-align: middle;
-            transition: transform 0.3s ease;
+            transition: none;
         }
 
         .btn-icon i {
             font-size: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .tmp-btn:hover .btn-text i,
-        .tmp-btn:hover .btn-icon i {
-            transform: translateY(-2px);
-        }
-
-        .download-btn:hover .btn-text i,
-        .download-btn:hover .btn-icon i {
-            transform: translateY(2px);
-        }
-
-        /* Ensure consistent icon sizing */
-        .fa-download,
-        .fa-paper-plane {
-            font-size: 1rem;
-            line-height: 1;
+            transition: none;
         }
 
         /* Button hover effects */
         .tmp-btn {
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .tmp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+            background-color: #ff69b4;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .tmp-btn:hover .btn-text i,
+        .tmp-btn:hover .btn-icon i {
+            transform: none;
         }
 
         .download-btn:hover {
-            transform: translateY(2px);
+            transform: none;
+        }
+
+        /* Remove hover icon reverse effects */
+        .tmp-btn.hover-icon-reverse .btn-text {
+            transition: none;
+            margin-inline-start: 0;
+        }
+
+        .tmp-btn.hover-icon-reverse .btn-icon {
+            transition: none;
+        }
+
+        .tmp-btn.hover-icon-reverse .btn-icon + .btn-icon {
+            transition: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        .tmp-btn:hover.hover-icon-reverse .btn-text {
+            transform: none;
+        }
+
+        .tmp-btn:hover.hover-icon-reverse .btn-icon {
+            opacity: 1;
+            transform: none;
+        }
+
+        .tmp-btn:hover.hover-icon-reverse .btn-icon + .btn-icon {
+            opacity: 1;
+            transform: none;
         }
     </style>
 </body>
