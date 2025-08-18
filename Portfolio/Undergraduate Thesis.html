@@ -3,36 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thesis Website</title>
+    <meta name="description" content="Landslide Risk Assessment: An Integrated Approach - Undergraduate Thesis by Isaac Melchor V. Enage">
+    <meta name="author" content="Isaac Melchor V. Enage">
+    <title>Landslide Risk Assessment - Undergraduate Thesis | Isaac Enage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        'academic': {
+                            '50': '#fafafa',
+                            '100': '#f4f4f5',
+                            '200': '#e4e4e7',
+                            '300': '#d4d4d8',
+                            '800': '#27272a',
+                            '900': '#18181b',
+                        }
+                    },
                     typography: {
                         DEFAULT: {
                             css: {
                                 color: '#fff',
+                                lineHeight: '1.7',
+                                fontSize: '1.125rem',
                                 a: {
                                     color: '#ef4444',
+                                    textDecoration: 'none',
+                                    fontWeight: '500',
                                     '&:hover': {
                                         color: '#f87171',
+                                        textDecoration: 'underline',
                                     },
                                 },
+                                h1: {
+                                    fontSize: '2.25rem',
+                                    fontWeight: '700',
+                                    lineHeight: '1.2',
+                                    marginBottom: '2rem',
+                                },
                                 h2: {
+                                    fontSize: '1.875rem',
                                     textAlign: 'center',
-                                    marginBottom: '1.5rem',
-                                    marginTop: '2.5rem',
+                                    marginBottom: '2.5rem',
+                                    marginTop: '4rem',
                                     color: '#ef4444',
+                                    fontWeight: '600',
+                                    borderBottom: '2px solid #ef4444',
+                                    paddingBottom: '0.75rem',
+                                    lineHeight: '1.3',
                                 },
                                 h3: {
-                                    textAlign: 'center',
+                                    fontSize: '1.5rem',
+                                    marginBottom: '1.75rem',
+                                    marginTop: '2.5rem',
+                                    color: '#f87171',
+                                    fontWeight: '600',
+                                    lineHeight: '1.4',
+                                },
+                                h4: {
+                                    fontSize: '1.25rem',
+                                    marginBottom: '1.25rem',
+                                    marginTop: '2rem',
+                                    color: '#fca5a5',
+                                    fontWeight: '500',
+                                    lineHeight: '1.4',
+                                },
+                                h5: {
+                                    fontSize: '1.125rem',
                                     marginBottom: '1rem',
                                     marginTop: '1.5rem',
-                                    color: '#f87171',
+                                    color: '#fed7d7',
+                                    fontWeight: '500',
+                                    lineHeight: '1.5',
                                 },
                                 p: {
+                                    fontSize: '1.125rem',
+                                    marginBottom: '1.5rem',
+                                    textAlign: 'justify',
                                     textIndent: '1.5em',
+                                    lineHeight: '1.8',
+                                    color: 'var(--text-primary)',
+                                },
+                                'ol, ul': {
+                                    fontSize: '1.125rem',
+                                    marginBottom: '1.5rem',
+                                    lineHeight: '1.7',
+                                },
+                                li: {
+                                    marginBottom: '0.75rem',
+                                    lineHeight: '1.7',
+                                    color: 'var(--text-primary)',
+                                },
+                                'li p': {
+                                    textIndent: '0',
+                                    marginBottom: '0.5rem',
+                                },
+                                blockquote: {
+                                    fontSize: '1.125rem',
+                                    fontStyle: 'italic',
+                                    marginLeft: '2rem',
+                                    marginRight: '2rem',
+                                    marginBottom: '1.5rem',
+                                    paddingLeft: '1rem',
+                                    borderLeft: '4px solid var(--primary-color)',
+                                    color: 'var(--text-secondary)',
+                                    lineHeight: '1.7',
                                 },
                             },
                         },
@@ -42,136 +124,582 @@
         }
     </script>
     <style>
+        :root {
+            --primary-color: #ef4444;
+            --primary-hover: #dc2626;
+            --secondary-color: #f87171;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --border-color: rgba(239, 68, 68, 0.2);
+            
+            /* Typography hierarchy variables */
+            --title-size: 48px;
+            --subtitle-size: 32px;
+            --author-size: 28px;
+            --degree-size: 20px;
+            --institution-size: 18px;
+            --university-size: 22px;
+            --date-size: 20px;
+        }
+
+        [data-theme="light"] {
+            --primary-color: #dc2626;
+            --primary-hover: #b91c1c;
+            --secondary-color: #ef4444;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --border-color: rgba(220, 38, 38, 0.2);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
         .fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .nav-active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 1px;
+        }
+
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 1rem;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            z-index: 40;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 35;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .sidebar-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toc-item:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+
+        .toc-item.active {
+            color: var(--primary-color);
+            font-weight: 600;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 0.75rem;
+            background-color: rgba(239, 68, 68, 0.1);
+        }
+
+        @media (min-width: 1024px) {
+            .main-content {
+                margin-left: 0;
+                transition: margin-left 0.3s ease;
+            }
+            
+            .main-content.sidebar-open {
+                margin-left: 280px;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .sidebar {
+                width: 100%;
+                left: -100%;
+            }
+        }
+
+        /* Enhanced Responsive Typography */
+        @media (max-width: 1024px) {
+            .prose h2 {
+                font-size: 1.75rem !important;
+                margin-top: 3.5rem !important;
+                margin-bottom: 2.25rem !important;
+            }
+            
+            .prose h3 {
+                font-size: 1.375rem !important;
+                margin-top: 2.25rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .prose h4 {
+                font-size: 1.125rem !important;
+                margin-top: 1.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .prose p, .prose li {
+                font-size: 1.0625rem !important;
+                line-height: 1.75 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --title-size: 34px;
+                --subtitle-size: 22px;
+                --author-size: 20px;
+                --degree-size: 16px;
+                --institution-size: 14px;
+                --university-size: 16px;
+                --date-size: 16px;
+            }
+            
+            .thesis-main-title {
+                margin-bottom: 30px !important;
+            }
+            
+            .thesis-subtitle {
+                margin-bottom: 30px !important;
+            }
+            
+            .thesis-author {
+                margin-bottom: 24px !important;
+            }
+            
+            .prose h2 {
+                font-size: 1.625rem !important;
+                margin-top: 3rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .prose h3 {
+                font-size: 1.25rem !important;
+                margin-top: 2rem !important;
+                margin-bottom: 1.25rem !important;
+            }
+            
+            .prose h4 {
+                font-size: 1.0625rem !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 0.875rem !important;
+            }
+            
+            .prose p, .prose li {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+                margin-bottom: 1.25rem !important;
+            }
+            
+            .prose ol, .prose ul {
+                margin-bottom: 1.25rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --title-size: 28px;
+                --subtitle-size: 18px;
+                --author-size: 18px;
+                --degree-size: 14px;
+                --institution-size: 12px;
+                --university-size: 14px;
+                --date-size: 14px;
+            }
+            
+            .thesis-main-title {
+                margin-bottom: 24px !important;
+                max-width: 95% !important;
+            }
+            
+            .thesis-subtitle {
+                margin-bottom: 24px !important;
+                max-width: 95% !important;
+            }
+            
+            .thesis-author {
+                margin-bottom: 20px !important;
+            }
+            
+            .prose h2 {
+                font-size: 1.5rem !important;
+                margin-top: 2.5rem !important;
+                margin-bottom: 1.75rem !important;
+            }
+            
+            .prose h3 {
+                font-size: 1.125rem !important;
+                margin-top: 1.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .prose h4 {
+                font-size: 1rem !important;
+                margin-top: 1.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .prose p, .prose li {
+                font-size: 0.9375rem !important;
+                line-height: 1.65 !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .prose ol, .prose ul {
+                margin-bottom: 1rem !important;
+            }
+            
+            .prose li {
+                margin-bottom: 0.5rem !important;
+            }
+        }
+
+        .section-anchor {
+            position: relative;
+            top: -80px;
+            visibility: hidden;
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            .print-only {
+                display: block;
+            }
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            .container {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 2rem;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+                color: black !important;
+            }
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-color);
+            color: white;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-black text-white min-h-screen font-sans text-base leading-relaxed tracking-wide">
-    <!-- Sticky Navigation -->
-    <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-red-500/20">
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay no-print" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Table of Contents -->
+    <aside class="sidebar no-print" role="navigation" aria-label="Table of Contents">
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold mb-4" style="color: var(--primary-color);">Table of Contents</h3>
+            <div class="toc-item" onclick="scrollToSection('title')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Title Page</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('abstract')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Abstract</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('introduction')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Chapter I: Introduction</span>
+                <div class="ml-4 mt-2 text-xs text-gray-400">
+                    <div class="cursor-pointer hover:text-gray-300 py-1" onclick="scrollToSubsection('background')">Background</div>
+                    <div class="cursor-pointer hover:text-gray-300 py-1" onclick="scrollToSubsection('objectives')">Objectives</div>
+                    <div class="cursor-pointer hover:text-gray-300 py-1" onclick="scrollToSubsection('significance')">Significance</div>
+                    <div class="cursor-pointer hover:text-gray-300 py-1" onclick="scrollToSubsection('scope')">Scope & Limitations</div>
+                </div>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('literature-review')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Chapter II: Literature Review</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('methodology')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Chapter III: Methodology</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('results')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Chapter IV: Results</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('conclusion')" role="button" tabindex="0">
+                <span class="text-sm font-medium">Chapter V: Conclusion</span>
+            </div>
+            <div class="toc-item" onclick="scrollToSection('references')" role="button" tabindex="0">
+                <span class="text-sm font-medium">References</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b no-print" style="border-color: var(--border-color); background-color: var(--bg-primary);" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-red-500 font-bold text-xl">Undergraduate Thesis</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#title" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Title</a>
-                    <a href="#abstract" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Abstract</a>
-                    <a href="#introduction" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Introduction</a>
-                    <a href="#literature-review" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Review of Related Literature</a>
-                    <a href="#methodology" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Methodology</a>
-                    <a href="#results" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Results</a>
-                    <a href="#conclusion" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Conclusion</a>
-                    <a href="#references" class="text-white hover:text-red-400 transition-colors transition-all duration-300">References</a>
+                <div class="flex items-center space-x-4">
+                    <!-- Sidebar Toggle -->
+                    <button onclick="toggleSidebar()" class="p-2 rounded-lg transition-colors" style="color: var(--text-primary);" aria-label="Toggle table of contents">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <a href="#title" class="font-bold text-lg" style="color: var(--primary-color);">Undergraduate Thesis</a>
                 </div>
-                <!-- Mobile menu button -->
-                <button class="md:hidden text-white hover:text-red-400" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="#title" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="title">Title</a>
+                    <a href="#abstract" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="abstract">Abstract</a>
+                    <a href="#introduction" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="introduction">Introduction</a>
+                    <a href="#literature-review" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="literature-review">Literature</a>
+                    <a href="#methodology" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="methodology">Methodology</a>
+                    <a href="#results" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="results">Results</a>
+                    <a href="#conclusion" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="conclusion">Conclusion</a>
+                    <a href="#references" class="nav-link transition-all duration-300" style="color: var(--text-primary);" data-section="references">References</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-lg transition-all duration-300" aria-label="Toggle theme">
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button class="lg:hidden p-2 rounded-lg transition-colors" style="color: var(--text-primary);" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
+            
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="#title" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Title</a>
-                    <a href="#abstract" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Abstract</a>
-                    <a href="#introduction" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Introduction</a>
-                    <a href="#literature-review" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Review of Related Literature</a>
-                    <a href="#methodology" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Methodology</a>
-                    <a href="#results" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Results</a>
-                    <a href="#conclusion" class="text-white hover:text-red-400 transition-colors transition-all duration-300">Conclusion</a>
-                    <a href="#references" class="text-white hover:text-red-400 transition-colors transition-all duration-300">References</a>
+            <div id="mobile-menu" class="lg:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3 pt-4 border-t" style="border-color: var(--border-color);">
+                    <a href="#title" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="title">Title Page</a>
+                    <a href="#abstract" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="abstract">Abstract</a>
+                    <a href="#introduction" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="introduction">Introduction</a>
+                    <a href="#literature-review" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="literature-review">Literature Review</a>
+                    <a href="#methodology" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="methodology">Methodology</a>
+                    <a href="#results" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="results">Results</a>
+                    <a href="#conclusion" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="conclusion">Conclusion</a>
+                    <a href="#references" class="nav-link-mobile transition-all duration-300 p-2 rounded" style="color: var(--text-primary);" data-section="references">References</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Print Header -->
+    <div class="print-only text-center mb-8">
+        <h1 class="text-2xl font-bold mb-2">LANDSLIDE RISK ASSESSMENT: AN INTEGRATED APPROACH IN EVALUATING THE AERIAL HAZARD EXTENT, VULNERABILITY, AND RISK PERCEPTION OF THE SELECTED PEOPLE IN SAN MATEO, RIZAL</h1>
+        <p class="text-lg">Isaac Melchor V. Enage</p>
+        <p>Bachelor of Science in Geography</p>
+        <p>University of the Philippines - July 2018</p>
+    </div>
+
     <!-- Main Content -->
-    <main class="container mx-auto px-4 pt-24 pb-16">
+    <main class="main-content container mx-auto px-4 pt-24 pb-16 transition-all duration-300" role="main">
+        <!-- Section Anchors for Navigation -->
+        <div id="title-anchor" class="section-anchor" aria-hidden="true"></div>
+        <div id="background" class="section-anchor" aria-hidden="true"></div>
+        <div id="objectives" class="section-anchor" aria-hidden="true"></div>
+        <div id="significance" class="section-anchor" aria-hidden="true"></div>
+        <div id="scope" class="section-anchor" aria-hidden="true"></div>
+
         <!-- Title Section -->
-        <section id="title" class="min-h-screen flex items-center justify-center fade-in">
-            <div class="text-center max-w-4xl">
-                <img src="https://cdn.brandfetch.io/iduPriZ3j9/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="UP Diliman Logo" class="w-40 h-40 mx-auto mb-8">
-                <h1 class="text-2xl md:text-3xl font-bold mb-8 leading-tight">LANDSLIDE RISK ASSESSMENT:<br>AN INTEGRATED APPROACH IN EVALUATING THE AERIAL HAZARD EXTENT, VULNERABILITY, AND RISK PERCEPTION OF THE SELECTED PEOPLE IN SAN MATEO, RIZAL</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8">Isaac Melchor V. Enage</p>
-                <p class="text-lg text-gray-400 mb-2">Bachelor of Science in Geography</p>
-                <div class="mt-8 space-y-2">
-                    <p class="text-lg text-gray-400">Department of Geography</p>
-                    <p class="text-lg text-gray-400">College of Social Sciences and Philosophy</p>
-                    <p class="text-lg text-gray-400">University of the Philippines</p>
-                    <p class="text-lg text-gray-400 mt-4">July 2018</p>
+        <section id="title" class="min-h-screen flex items-center justify-center fade-in no-print" aria-labelledby="main-title">
+            <div class="text-center max-w-6xl px-4">
+                <img src="images/logo.png" alt="University of the Philippines Diliman Logo" class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-10 opacity-90">
+                
+                <!-- Main Title -->
+                <h1 id="main-title" class="thesis-main-title font-bold mb-10" style="color: var(--primary-color); line-height: 1.4; font-size: var(--title-size); max-width: 90%; margin-left: auto; margin-right: auto;">
+                    LANDSLIDE RISK ASSESSMENT:
+                </h1>
+                
+                <!-- Subtitle -->
+                <h2 class="thesis-subtitle font-medium mb-10" style="color: var(--secondary-color); line-height: 1.5; font-size: var(--subtitle-size); max-width: 85%; margin-left: auto; margin-right: auto;">
+                    AN INTEGRATED APPROACH IN EVALUATING THE AERIAL HAZARD EXTENT, VULNERABILITY, AND RISK PERCEPTION OF THE SELECTED PEOPLE IN SAN MATEO, RIZAL
+                </h2>
+                
+                <!-- Author Name -->
+                <div class="mb-8">
+                    <p class="thesis-author font-semibold mb-8" style="color: var(--text-primary); font-size: var(--author-size); line-height: 1.4;">Isaac Melchor V. Enage</p>
+                    
+                    <!-- Degree Info -->
+                    <p class="thesis-degree mb-6" style="color: var(--text-secondary); font-size: var(--degree-size); font-style: italic; line-height: 1.6;">Bachelor of Science in Geography</p>
+                </div>
+                
+                <!-- Institution Details -->
+                <div class="space-y-5" style="color: var(--text-secondary);">
+                    <p class="thesis-institution" style="font-size: var(--institution-size); line-height: 1.6;">Department of Geography</p>
+                    <p class="thesis-institution" style="font-size: var(--institution-size); line-height: 1.6;">College of Social Sciences and Philosophy</p>
+                    
+                    <!-- University Name -->
+                    <p class="thesis-university font-semibold" style="font-size: var(--university-size); line-height: 1.6; color: var(--text-primary);">University of the Philippines</p>
+                    
+                    <!-- Date -->
+                    <p class="thesis-date mt-8 font-medium" style="font-size: var(--date-size); line-height: 1.6;">July 2018</p>
                 </div>
             </div>
         </section>
 
         <!-- Abstract Section -->
-        <section id="abstract" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Abstract</h2>
-            <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
-                <p>Despite being one of the fastest growing municipality in Rizal, San Mateo still experiences extreme landslides events. This poses a serious problem to the safety of its current and future residents since the municipality is expected to carry the surplus of the population of the adjacent cities like Quezon City and Marikina City in the future. With this, the main objective of this study is to conduct two different landslide risk assessments using landslide hazard map (LHM), landslide vulnerability map (LVM), and evaluation of the risk-perceptions of the selected people in the municipality. The first landslide risk map (LRM) was produced using the LHM and LVM. LHM was produced through the relational analysis of the different environmental factors and the landslide inventory processed using logistic regression and ANN analysis. LVM and the vulnerability of the people was measured using SVI. Results of the LHM showed that the highly susceptible areas are located in the central and the eastern part of the municipality. Fortunately, no highly susceptible areas are found in the areas where the most vulnerable respondents reside, based on the LVM produced. However, these same vulnerable respondents were considered as highly at risk by the first LRM since they are vulnerable and are still exposed to hazards. Additionally, all the respondents are willing to accept the risks through boosting their knowledge on landslides such as attending seminars and etc. No one is willing to leave the municipality or only pay for their safety. Also, all the respondents were classified as risk averse and risk seekers based on their answers. Most of the locations and concentrations of the people considered as highly at risk by the first LRM is similar with the results of the second LRM produced from the risk-perception of the people. However, rare cases still exist since the individual perceptions of the people are based on their own experiences and rationality. In conclusion, both the two landslide risk maps have their own strengths and weaknesses. While one approach can stand on its own, the two approaches in landslide risk assessments are best when combined.</p>
+        <section id="abstract" class="py-16 md:py-20 fade-in" aria-labelledby="abstract-title">
+            <h2 id="abstract-title" class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Abstract</h2>
+            <div class="prose prose-invert max-w-4xl mx-auto py-6 md:py-10 px-4">
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; text-indent: 0; margin-bottom: 1.5rem; font-weight: 400;">Despite being one of the fastest growing municipality in Rizal, San Mateo still experiences extreme landslides events. This poses a serious problem to the safety of its current and future residents since the municipality is expected to carry the surplus of the population of the adjacent cities like Quezon City and Marikina City in the future. With this, the main objective of this study is to conduct two different landslide risk assessments using landslide hazard map (LHM), landslide vulnerability map (LVM), and evaluation of the risk-perceptions of the selected people in the municipality.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; text-indent: 0; margin-bottom: 1.5rem; font-weight: 400;">The first landslide risk map (LRM) was produced using the LHM and LVM. LHM was produced through the relational analysis of the different environmental factors and the landslide inventory processed using logistic regression and ANN analysis. LVM and the vulnerability of the people was measured using SVI. Results of the LHM showed that the highly susceptible areas are located in the central and the eastern part of the municipality.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; text-indent: 0; margin-bottom: 1.5rem; font-weight: 400;">Fortunately, no highly susceptible areas are found in the areas where the most vulnerable respondents reside, based on the LVM produced. However, these same vulnerable respondents were considered as highly at risk by the first LRM since they are vulnerable and are still exposed to hazards. Additionally, all the respondents are willing to accept the risks through boosting their knowledge on landslides such as attending seminars and etc.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; text-indent: 0; font-weight: 400;">In conclusion, both the two landslide risk maps have their own strengths and weaknesses. While one approach can stand on its own, the two approaches in landslide risk assessments are best when combined.</p>
             </div>
         </section>
 
         <!-- Introduction Section -->
-        <section id="introduction" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Chapter I: Introduction</h2>
-            <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
-                <h3 class="text-xl font-semibold mb-4 text-red-400">A. Background of the Study</h3>
-                <p>Philippines is one of the many countries in Asia gravely exposed to a vast range of natural hazards and disasters (The Guardian, 2010). From extreme typhoons and almost endless rainfalls, flashfloods, volcanic eruptions, earthquakes, tsunamis, sudden slope failures, down to the most unexpected sinkholes and whirlpools, Philippines really seems to be a converging zone of natural calamities. Even though many countries in Asia are more prone to natural hazard than the Philippines (Assilzadeh, 2010), the social and economic capabilities of this country make it more vulnerable. Japan, for example, has a higher likelihood of disaster occurrence than the Philippines, but it does not make it more vulnerable. According to the 2010 World Disasters Report of the International Federation of Red Cross and Crescent Societies (IFRC), the probability for a Filipino to be killed by a natural disaster is 17 times larger than the probability of a Japanese being killed by the same reason. This is because the difference of the quality of the urban and environmental planning strategies – or the urban risk divide – between the two countries is high, making the former more vulnerable.</p>
+        <section id="introduction" class="py-16 md:py-20 fade-in" aria-labelledby="introduction-title">
+            <h2 id="introduction-title" class="font-bold mb-12 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Chapter I: Introduction</h2>
+            <div class="max-w-4xl mx-auto py-6 md:py-10 px-4">
+                <h3 id="background" class="font-semibold mb-6" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">A. Background of the Study</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">Philippines is one of the many countries in Asia gravely exposed to a vast range of natural hazards and disasters (The Guardian, 2010). From extreme typhoons and almost endless rainfalls, flashfloods, volcanic eruptions, earthquakes, tsunamis, sudden slope failures, down to the most unexpected sinkholes and whirlpools, Philippines really seems to be a converging zone of natural calamities. Even though many countries in Asia are more prone to natural hazard than the Philippines (Assilzadeh, 2010), the social and economic capabilities of this country make it more vulnerable. Japan, for example, has a higher likelihood of disaster occurrence than the Philippines, but it does not make it more vulnerable. According to the 2010 World Disasters Report of the International Federation of Red Cross and Crescent Societies (IFRC), the probability for a Filipino to be killed by a natural disaster is 17 times larger than the probability of a Japanese being killed by the same reason. This is because the difference of the quality of the urban and environmental planning strategies – or the urban risk divide – between the two countries is high, making the former more vulnerable.</p>
 
-                <p>This urban risk divide is severe in Asia, especially in the developing countries such as the Philippines. As a third world country situated in a latitude where typhoons frequently pass, and in a region dominated by volcanoes and fault lines, the number of hazards, risks and vulnerabilities that threaten the country is nearly impossible to measure. One leading natural hazard that is widespread in the country is the landslide.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">This urban risk divide is severe in Asia, especially in the developing countries such as the Philippines. As a third world country situated in a latitude where typhoons frequently pass, and in a region dominated by volcanoes and fault lines, the number of hazards, risks and vulnerabilities that threaten the country is nearly impossible to measure. One leading natural hazard that is widespread in the country is the landslide.</p>
 
-                <p>Landslide, put simply, refers to the downward movement of rocks, soil, and debris on an oblique surface or slope (USGS, 2004). Landslides are usually naturally-occurring in the environment, but the incessant disuse of human activities made some of these events to become human-induced. The elements that usually affect the landslide occurrences are slope angle, rainfall, weathering, land cover, overloading, and geology.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">Landslide, put simply, refers to the downward movement of rocks, soil, and debris on an oblique surface or slope (USGS, 2004). Landslides are usually naturally-occurring in the environment, but the incessant disuse of human activities made some of these events to become human-induced. The elements that usually affect the landslide occurrences are slope angle, rainfall, weathering, land cover, overloading, and geology.</p>
 
-                <p>The blending of the naturally immense amount of rainfall brought by typhoons and monsoons, and the geological perils (earthquake and volcanic eruptions) that exist in the country transforms the terrain of the Philippines into a landslide-susceptible state. In her interview last 2010, former senior science research specialist of Mines and Geosciences Bureau (MGB) Angelica Sajona told Integrated Regional Information Networks (IRIN) News that “[with] the changing weather conditions and amount of rainfall each season brings, we could categorically state that the number of landslide occurrences is increasing," With 80% of the country's total land area being prone to landslide, MGB has also reported that the country ranks fourth in the list of the most vulnerable countries to landslide hazard and risk in Asia (2010).</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">The blending of the naturally immense amount of rainfall brought by typhoons and monsoons, and the geological perils (earthquake and volcanic eruptions) that exist in the country transforms the terrain of the Philippines into a landslide-susceptible state. In her interview last 2010, former senior science research specialist of Mines and Geosciences Bureau (MGB) Angelica Sajona told Integrated Regional Information Networks (IRIN) News that "[with] the changing weather conditions and amount of rainfall each season brings, we could categorically state that the number of landslide occurrences is increasing," With 80% of the country's total land area being prone to landslide, MGB has also reported that the country ranks fourth in the list of the most vulnerable countries to landslide hazard and risk in Asia (2010).</p>
 
-                <p>Clearly, the intensifying vulnerability of the entire country is associated with the increasing population of its vulnerable communities. As the population grows, more and more people will continue to move away from the city center and settle at the periphery – that is, a place exhibiting rapid urbanization but lower economic and social development (Chiu and Eidsvig, 2016). This study used the case of the National Capital Region and Region – IVA CALABARZON as the example. In the future, surge of population movements from the National Capital Region to the adjacent region is expected to occur. Unfortunately, for this set-up, the general geomorphological make-up of the provinces in the adjacent region, in this case the Region IV-A, is mountainous and rugged, decreasing the number of safe habitable areas while at the same time increasing the number of vulnerable population to landslide. According to a map issued by the Mines and Geosciences Bureau (2011), 59 out of the 141 and municipalities (PSA, 2015) in the region are highly susceptible to landslides. Moreover, among the five provinces in the region, Rizal has the largest area of highly susceptible space for landslides (DENR, 2012). This poses a serious problem to the province because it is currently one of the nearest provinces in Metro Manila that has the highest probability to become the basin of population pours from the country's capital region. As the population of National Capital Region increases, the number of population who will settle in landslide-susceptible areas in Rizal will also increase because, as stated previously, the safe zones in the province are very limited.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">Clearly, the intensifying vulnerability of the entire country is associated with the increasing population of its vulnerable communities. As the population grows, more and more people will continue to move away from the city center and settle at the periphery – that is, a place exhibiting rapid urbanization but lower economic and social development (Chiu and Eidsvig, 2016). This study used the case of the National Capital Region and Region – IVA CALABARZON as the example. In the future, surge of population movements from the National Capital Region to the adjacent region is expected to occur. Unfortunately, for this set-up, the general geomorphological make-up of the provinces in the adjacent region, in this case the Region IV-A, is mountainous and rugged, decreasing the number of safe habitable areas while at the same time increasing the number of vulnerable population to landslide. According to a map issued by the Mines and Geosciences Bureau (2011), 59 out of the 141 and municipalities (PSA, 2015) in the region are highly susceptible to landslides. Moreover, among the five provinces in the region, Rizal has the largest area of highly susceptible space for landslides (DENR, 2012). This poses a serious problem to the province because it is currently one of the nearest provinces in Metro Manila that has the highest probability to become the basin of population pours from the country's capital region. As the population of National Capital Region increases, the number of population who will settle in landslide-susceptible areas in Rizal will also increase because, as stated previously, the safe zones in the province are very limited.</p>
 
-                <p>This projected problem, however, has already come in to fruition because numerous landslide incidents in the region have already been recorded in the past few years. Several municipalities have already experienced disastrous landslide occurrences, one of which is San Mateo. The latest occurrence was verified last August 2017, where a major highway in Barangay Silangan was destroyed by a slope failure (ABS-CBN News, 2017). Another landslide incident happened last July 2009, where two houses were destroyed (GMA News, 2009). Fortunately, no deaths were recorded in the landslide events that have occurred in San Mateo. However, deaths were confirmed in the landslide incidents in other municipalities. Clearly, safety measures and preparations must be immediately done to further prevent these tragic events from occurring in the municipality. As such, landslide risk planning and mitigation in San Mateo must be carefully administered to keep the communities and the infrastructures away from deadly hazards.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">This projected problem, however, has already come in to fruition because numerous landslide incidents in the region have already been recorded in the past few years. Several municipalities have already experienced disastrous landslide occurrences, one of which is San Mateo. The latest occurrence was verified last August 2017, where a major highway in Barangay Silangan was destroyed by a slope failure (ABS-CBN News, 2017). Another landslide incident happened last July 2009, where two houses were destroyed (GMA News, 2009). Fortunately, no deaths were recorded in the landslide events that have occurred in San Mateo. However, deaths were confirmed in the landslide incidents in other municipalities. Clearly, safety measures and preparations must be immediately done to further prevent these tragic events from occurring in the municipality. As such, landslide risk planning and mitigation in San Mateo must be carefully administered to keep the communities and the infrastructures away from deadly hazards.</p>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">B. Research Objectives</h3>
-                <p>The main objective of this study is to assess the overall condition of the selected people on landslide risks using two completely different approaches: one is founded on GIS-based techniques and quantitative methods; the other is based on the landslide risk – perception of the exposed people in the municipality. Also, this study evaluates the difference in the performance of the two landslide risk assessment approaches. Through performing an integrated approach in the assessment of the landslide hazard extent in the municipality, risk-perception of the selected people in the susceptible areas, and the vulnerability of the selected people in San Mateo, Rizal, the desired final maps were produced. Consequently, specific objectives were further identified to expound the aim:</p>
-                <ol class="list-decimal pl-6 space-y-2">
-                    <li>To produce a landslide susceptibility map determining the extent of the landslide hazards in the municipality using logistic regression model and artificial neural network in IBM SPSS Statistics 20 and digital cartography in ArcGIS 10.2.2;</li>
-                    <li>To assess the socioeconomic, demographic, and physical vulnerability of the people in the susceptible areas using the Social Vulnerability Index, and produce a vulnerability map displaying the areas of vulnerability to landslide hazards based on the assessments conducted;</li>
-                    <li>To produce a landslide risk map based on the landslide hazard map and landslide vulnerability map;</li>
-                    <li>To perform an analysis measuring the extent of knowledge and landslide risk-perception of the selected people in the susceptible areas using Preparedness Model and Willingness Diagram, and produce a landslide risk map based on the analysis performed, and finally;</li>
-                    <li>To visually compare the two landslide risk maps and construct a possible explanation of their similarities and differences.</li>
+                <h3 id="objectives" class="font-semibold mb-6 mt-8" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">B. Research Objectives</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">The main objective of this study is to assess the overall condition of the selected people on landslide risks using two completely different approaches: one is founded on GIS-based techniques and quantitative methods; the other is based on the landslide risk – perception of the exposed people in the municipality. Also, this study evaluates the difference in the performance of the two landslide risk assessment approaches. Through performing an integrated approach in the assessment of the landslide hazard extent in the municipality, risk-perception of the selected people in the susceptible areas, and the vulnerability of the selected people in San Mateo, Rizal, the desired final maps were produced. Consequently, specific objectives were further identified to expound the aim:</p>
+                <ol class="list-decimal pl-6 space-y-2" style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">To produce a landslide susceptibility map determining the extent of the landslide hazards in the municipality using logistic regression model and artificial neural network in IBM SPSS Statistics 20 and digital cartography in ArcGIS 10.2.2;</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">To assess the socioeconomic, demographic, and physical vulnerability of the people in the susceptible areas using the Social Vulnerability Index, and produce a vulnerability map displaying the areas of vulnerability to landslide hazards based on the assessments conducted;</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">To produce a landslide risk map based on the landslide hazard map and landslide vulnerability map;</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">To perform an analysis measuring the extent of knowledge and landslide risk-perception of the selected people in the susceptible areas using Preparedness Model and Willingness Diagram, and produce a landslide risk map based on the analysis performed, and finally;</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">To visually compare the two landslide risk maps and construct a possible explanation of their similarities and differences.</li>
                 </ol>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">Statement of the Problem</h3>
-                <p>This study aimed to answer one general question: what is the current condition of the selected people of San Mateo in terms of landslide risks? The specific objectives of the study remain unclear unless questions were formulated to serve as guides. To further specify and elucidate the detailed aims of this study, below are the research questions that address the methods of every objectives provided:</p>
-                <ol class="list-decimal pl-6 space-y-2">
-                    <li>Based on the results of landslide susceptibility map, what areas of San Mateo, Rizal are highly susceptible, moderately susceptible, lowly susceptible, and not susceptible to landslides?</li>
-                    <li>Based on the results of the landslide vulnerability map, where are most of the vulnerable population in the municipality located?</li>
-                    <li>Based on the landslide risk map produced through combining the landslide hazard map and landslide vulnerability map, where are the respondents who are at high risk mostly concentrated?</li>
-                    <li>Based on the preparedness model, how do the selected locals perceive their level of preparedness for landslide events and what factors contribute in shaping their preparation?</li>
-                    <li>Based on the willingness diagram, how willing are the respondents to address the issues of landslide risks?</li>
-                    <li>Based on the landslide – risk perception of the exposed people in the municipality, where are the people who think they are at risk mostly located?</li>
-                    <li>How do the two landslide risk maps produced differ from one another?</li>
+                <h4 class="font-semibold mb-4 mt-6" style="color: #fca5a5; font-size: 1.25rem; line-height: 1.4; margin-top: 2rem; margin-bottom: 1.25rem;">Statement of the Problem</h4>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">This study aimed to answer one general question: what is the current condition of the selected people of San Mateo in terms of landslide risks? The specific objectives of the study remain unclear unless questions were formulated to serve as guides. To further specify and elucidate the detailed aims of this study, below are the research questions that address the methods of every objectives provided:</p>
+                <ol class="list-decimal pl-6 space-y-2" style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the results of landslide susceptibility map, what areas of San Mateo, Rizal are highly susceptible, moderately susceptible, lowly susceptible, and not susceptible to landslides?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the results of the landslide vulnerability map, where are most of the vulnerable population in the municipality located?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the landslide risk map produced through combining the landslide hazard map and landslide vulnerability map, where are the respondents who are at high risk mostly concentrated?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the preparedness model, how do the selected locals perceive their level of preparedness for landslide events and what factors contribute in shaping their preparation?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the willingness diagram, how willing are the respondents to address the issues of landslide risks?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Based on the landslide – risk perception of the exposed people in the municipality, where are the people who think they are at risk mostly located?</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">How do the two landslide risk maps produced differ from one another?</li>
                 </ol>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">C. Significance of the Study</h3>
-                <p>Despite its relatively small area, San Mateo is one of the fastest growing municipalities in the province of Rizal (DILG, n.d.). Aside from the fact that it is one of the nearest municipalities of Rizal from the National Capital Region, San Mateo is famous for its tourism accomplishments and migration records. The municipality has one of the most perfect settings of residential areas in its upland area part – the mountains, trees, and high altitudes provide a remarkable rural experience while at the same time maintaining the urban benefits because of its proximity to the big cities such as Quezon City and Marikina City.</p>
-                <p>In the future, it can be projected that huge population of people will migrate to the municipality for permanent residency. This event is not far from reality since it is directly beside the most populous city in the country (Quezon City), and spaces are always limited. Given this fact, San Mateo is one of the few municipalities that might receive the largest surplus of the population of the Quezon city in the future.</p>
-                <p>This projected phenomenon, however, poses a big problem since the residential area of San Mateo is relatively small. The high population flow might force some to live in the high-altitude lands, where landslide hazards are extremely prominent. However, this outcome could be avoided if the landslide risks of some of the people will be assessed now.</p>
-                <p>This study conducts an assessment on the current conditions of the selected people on landslide risk using two different approach. The results of this study can help in forming an overview of the current situation of the selected people in the municipality, while at the same time evaluates the effectiveness and the performance of the two landslide risk approaches conducted. Considering this fact, the municipality of San Mateo can benefit from the results of this study. This study will also greatly help future researchers who might want to conduct a landslide risk assessment and give them ideas on how to conduct one.</p>
+                <h3 id="significance" class="font-semibold mb-6 mt-8" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">C. Significance of the Study</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">Despite its relatively small area, San Mateo is one of the fastest growing municipalities in the province of Rizal (DILG, n.d.). Aside from the fact that it is one of the nearest municipalities of Rizal from the National Capital Region, San Mateo is famous for its tourism accomplishments and migration records. The municipality has one of the most perfect settings of residential areas in its upland area part – the mountains, trees, and high altitudes provide a remarkable rural experience while at the same time maintaining the urban benefits because of its proximity to the big cities such as Quezon City and Marikina City.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">In the future, it can be projected that huge population of people will migrate to the municipality for permanent residency. This event is not far from reality since it is directly beside the most populous city in the country (Quezon City), and spaces are always limited. Given this fact, San Mateo is one of the few municipalities that might receive the largest surplus of the population of the Quezon city in the future.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">This projected phenomenon, however, poses a big problem since the residential area of San Mateo is relatively small. The high population flow might force some to live in the high-altitude lands, where landslide hazards are extremely prominent. However, this outcome could be avoided if the landslide risks of some of the people will be assessed now.</p>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">This study conducts an assessment on the current conditions of the selected people on landslide risk using two different approach. The results of this study can help in forming an overview of the current situation of the selected people in the municipality, while at the same time evaluates the effectiveness and the performance of the two landslide risk approaches conducted. Considering this fact, the municipality of San Mateo can benefit from the results of this study. This study will also greatly help future researchers who might want to conduct a landslide risk assessment and give them ideas on how to conduct one.</p>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">D. Scope and Limitations</h3>
-                <p>The study was conducted inside the administrative boundaries of San Mateo, and the results of the study will only be applicable within the municipality. Most of the data used in generating the landslide hazard map were from credible open source websites. The landslide inventory was produced by the researcher using remote sensing, and no field validations were conducted due to time and capacity constraints. The landslide hazard map made using several statistical analyses is just a general representation of the actual areas with landslide hazards and does not assure a hundred percent precision in defining the boundaries of the real-world hazards. Also, the areas delineated as landslide hazards only show the probability of slope failure of the land. It does not include the buffer zones in which the landslides will pour. Most of the vulnerability measures only pertain to the head of the family surveyed, and not to the entire household/business establishment. The accuracy of the physically-made risk map was based on the accuracy of the final landslide hazard map and the final landslide vulnerability map. This means that the flaws and limitations of the prerequisite maps will also be inherited by the landslide risk map. Also, the method on gathering the perceptions of the respondents were not purely qualitative, as it was only conducted using a questionnaire with open ended questions. Lastly, the general analysis on the overall results of the study only included the 82 respondents who willingly participated, and the conclusions that were generated were only applied to them.</p>
+                <h3 id="scope" class="font-semibold mb-6 mt-8" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">D. Scope and Limitations</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">The study was conducted inside the administrative boundaries of San Mateo, and the results of the study will only be applicable within the municipality. Most of the data used in generating the landslide hazard map were from credible open source websites. The landslide inventory was produced by the researcher using remote sensing, and no field validations were conducted due to time and capacity constraints. The landslide hazard map made using several statistical analyses is just a general representation of the actual areas with landslide hazards and does not assure a hundred percent precision in defining the boundaries of the real-world hazards. Also, the areas delineated as landslide hazards only show the probability of slope failure of the land. It does not include the buffer zones in which the landslides will pour. Most of the vulnerability measures only pertain to the head of the family surveyed, and not to the entire household/business establishment. The accuracy of the physically-made risk map was based on the accuracy of the final landslide hazard map and the final landslide vulnerability map. This means that the flaws and limitations of the prerequisite maps will also be inherited by the landslide risk map. Also, the method on gathering the perceptions of the respondents were not purely qualitative, as it was only conducted using a questionnaire with open ended questions. Lastly, the general analysis on the overall results of the study only included the 82 respondents who willingly participated, and the conclusions that were generated were only applied to them.</p>
             </div>
         </section>
 
         <!-- Review of Related Literature Section -->
         <section id="literature-review" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Chapter II: Review of Related Literature</h2>
+            <h2 class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Chapter II: Review of Related Literature</h2>
             <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
-                <h3 class="text-xl font-semibold mb-4 text-red-400">A. Theoretical Framework</h3>
+                <h3 class="font-semibold mb-4" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">A. Theoretical Framework</h3>
                 <p>The study is grounded in several theoretical frameworks that guide the understanding of landslide risk assessment:</p>
                 <ol class="list-decimal pl-6 space-y-2">
                     <li>Risk Assessment Theory
@@ -185,47 +713,47 @@
                     </li>
                 </ol>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">B. Conceptual Framework</h3>
-                <p>The study's conceptual framework integrates three main components:</p>
-                <ol class="list-decimal pl-6 space-y-2">
-                    <li>Hazard Assessment
-                        <ul class="list-disc pl-6 mt-2">
-                            <li>Environmental factors</li>
-                            <li>Geological conditions</li>
-                            <li>Historical landslide data</li>
+                <h3 class="font-semibold mb-4" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">B. Conceptual Framework</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">The study's conceptual framework integrates three main components:</p>
+                <ol class="list-decimal pl-6 space-y-2" style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Hazard Assessment
+                        <ul class="list-disc pl-6 mt-2" style="font-size: 1.125rem; line-height: 1.7; color: var(--text-primary);">
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Environmental factors</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Geological conditions</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Historical landslide data</li>
                         </ul>
                     </li>
-                    <li>Vulnerability Assessment
-                        <ul class="list-disc pl-6 mt-2">
-                            <li>Socioeconomic factors</li>
-                            <li>Demographic characteristics</li>
-                            <li>Physical infrastructure</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Vulnerability Assessment
+                        <ul class="list-disc pl-6 mt-2" style="font-size: 1.125rem; line-height: 1.7; color: var(--text-primary);">
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Socioeconomic factors</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Demographic characteristics</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Physical infrastructure</li>
                         </ul>
                     </li>
-                    <li>Risk Perception Analysis
-                        <ul class="list-disc pl-6 mt-2">
-                            <li>Community knowledge</li>
-                            <li>Risk awareness</li>
-                            <li>Preparedness levels</li>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Risk Perception Analysis
+                        <ul class="list-disc pl-6 mt-2" style="font-size: 1.125rem; line-height: 1.7; color: var(--text-primary);">
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Community knowledge</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Risk awareness</li>
+                            <li style="margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-primary);">Preparedness levels</li>
                         </ul>
                     </li>
                 </ol>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">C. Review of Related Studies</h3>
-                <p>Several studies have contributed to the understanding of landslide risk assessment:</p>
-                <ol class="list-decimal pl-6 space-y-2">
-                    <li>GIS-based Landslide Assessment
-                        <p>Studies by Guzzetti et al. (2005) and Pradhan & Lee (2010) demonstrate the effectiveness of GIS and statistical methods in landslide susceptibility mapping.</p>
+                <h3 class="font-semibold mb-4" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">C. Review of Related Studies</h3>
+                <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem; text-indent: 1.5em; font-weight: 400;">Several studies have contributed to the understanding of landslide risk assessment:</p>
+                <ol class="list-decimal pl-6 space-y-2" style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-primary);">
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">GIS-based Landslide Assessment
+                        <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1rem; text-indent: 0; font-weight: 400;">Studies by Guzzetti et al. (2005) and Pradhan & Lee (2010) demonstrate the effectiveness of GIS and statistical methods in landslide susceptibility mapping.</p>
                     </li>
-                    <li>Social Vulnerability Analysis
-                        <p>Research by Cutter (1996) and Birkmann (2006) provides frameworks for assessing social vulnerability to natural hazards.</p>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Social Vulnerability Analysis
+                        <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1rem; text-indent: 0; font-weight: 400;">Research by Cutter (1996) and Birkmann (2006) provides frameworks for assessing social vulnerability to natural hazards.</p>
                     </li>
-                    <li>Risk Perception Studies
-                        <p>Works by Mileti (1999) and Alexander (2000) explore the relationship between scientific risk assessment and community risk perception.</p>
+                    <li style="margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-primary);">Risk Perception Studies
+                        <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.8; text-align: justify; margin-bottom: 1rem; text-indent: 0; font-weight: 400;">Works by Mileti (1999) and Alexander (2000) explore the relationship between scientific risk assessment and community risk perception.</p>
                     </li>
                 </ol>
 
-                <h3 class="text-xl font-semibold mb-4 text-red-400">D. Synthesis of Literature</h3>
+                <h3 class="font-semibold mb-4" style="color: var(--secondary-color); font-size: 1.5rem; line-height: 1.4; margin-top: 2.5rem; margin-bottom: 1.75rem;">D. Synthesis of Literature</h3>
                 <p>The review of literature reveals several key findings:</p>
                 <ul class="list-disc pl-6 space-y-2">
                     <li>The importance of integrating multiple approaches in landslide risk assessment</li>
@@ -238,7 +766,7 @@
 
         <!-- Methodology Section -->
         <section id="methodology" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Chapter III: Methodology</h2>
+            <h2 class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Chapter III: Methodology</h2>
             <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
                 <p>This chapter provides a comprehensive explanation on the procedures in generating the three types of map used in the study – (1) one landslide hazard map, (2) one map of the vulnerable population in the exposed areas, and (3) two landslide risk maps. This chapter also expounds the procedure on the analysis of the landslide risk - perception and landslide vulnerability of the selected population in the exposed areas of the municipality.</p>
 
@@ -275,7 +803,7 @@
 
         <!-- Results Section -->
         <section id="results" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Chapter IV: Results and Discussion</h2>
+            <h2 class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Chapter IV: Results and Discussion</h2>
             <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
                 <h3 class="text-xl font-semibold mb-4 text-red-400">A. Landslide Hazard Assessment</h3>
                 <p>The landslide hazard assessment was conducted using GIS-based techniques and statistical analysis. The following factors were considered in the analysis:</p>
@@ -356,7 +884,7 @@
 
         <!-- Conclusion Section -->
         <section id="conclusion" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">Chapter V: Conclusion and Recommendations</h2>
+            <h2 class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">Chapter V: Conclusion and Recommendations</h2>
             <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
                 <h3 class="text-xl font-semibold mb-4 text-red-400">A. Summary of Findings</h3>
                 <p>The study successfully assessed the landslide risks in San Mateo, Rizal using both GIS-based techniques and risk perception analysis. The main findings include:</p>
@@ -430,7 +958,7 @@
 
         <!-- References Section -->
         <section id="references" class="py-20 fade-in">
-            <h2 class="text-2xl font-bold mb-8 text-red-500 text-center">References</h2>
+            <h2 class="font-bold mb-8 text-center" style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.75rem; display: inline-block; width: 100%; font-size: 1.875rem; line-height: 1.3; margin-top: 4rem; margin-bottom: 2.5rem;">References</h2>
             <div class="prose prose-invert max-w-4xl mx-auto py-10 px-4 text-justify">
                 <ol class="list-decimal pl-6 space-y-4">
                     <li>Adger, W. N. (2006). Vulnerability. Global Environmental Change, 16(3), 268-281.</li>
@@ -469,57 +997,224 @@
     </main>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition-colors transition-all duration-300 opacity-0 invisible">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button id="backToTop" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible no-print z-30" style="background-color: var(--primary-color); color: white;" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
 
     <script>
+        // Enhanced JavaScript functionality for improved UX
+        
+        // Theme management
+        let currentTheme = localStorage.getItem('thesis-theme') || 'dark';
+        
+        function initializeTheme() {
+            if (currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.body.classList.add('light-theme');
+            }
+            updateThemeIcon();
+        }
+        
+        function toggleTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('thesis-theme', currentTheme);
+            
+            if (currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.body.classList.add('light-theme');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                document.body.classList.remove('light-theme');
+            }
+            updateThemeIcon();
+        }
+        
+        function updateThemeIcon() {
+            const themeButton = document.querySelector('.theme-toggle');
+            const sunIcon = themeButton.querySelector('svg:first-child');
+            const moonIcon = themeButton.querySelector('svg:last-child');
+            
+            if (currentTheme === 'light') {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+        
+        // Sidebar management
+        let sidebarOpen = false;
+        
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            const mainContent = document.querySelector('.main-content');
+            
+            sidebarOpen = !sidebarOpen;
+            
+            if (sidebarOpen) {
+                sidebar.classList.add('open');
+                overlay.classList.add('open');
+                if (window.innerWidth >= 1024) {
+                    mainContent.classList.add('sidebar-open');
+                }
+            } else {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+                mainContent.classList.remove('sidebar-open');
+            }
+        }
+        
         // Mobile menu toggle
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
+        
+        // Enhanced smooth scrolling
+        function scrollToSection(sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                const offset = 80; // Account for fixed header
+                const targetPosition = target.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close sidebar and mobile menu
+                if (sidebarOpen) toggleSidebar();
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        }
+        
+        function scrollToSubsection(subsectionId) {
+            scrollToSection(subsectionId);
+        }
+        
+        // Reading progress tracking
+        function updateReadingProgress() {
+            const progressBar = document.querySelector('.reading-progress');
+            const docElement = document.documentElement;
+            const docBody = document.body;
+            const scrollTop = docElement.scrollTop || docBody.scrollTop;
+            const scrollHeight = (docElement.scrollHeight || docBody.scrollHeight) - docElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        }
+        
+        // Active section highlighting
+        function highlightActiveSection() {
+            const sections = ['title', 'abstract', 'introduction', 'literature-review', 'methodology', 'results', 'conclusion', 'references'];
+            const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+            const tocItems = document.querySelectorAll('.toc-item');
+            
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 100;
+            
+            // Find current section
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element && element.offsetTop <= scrollPosition) {
+                    currentSection = sectionId;
+                }
+            });
+            
+            // Update navigation links
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.dataset.section === currentSection) {
+                    link.classList.add('nav-active');
+                }
+            });
+            
+            // Update table of contents
+            tocItems.forEach(item => {
+                item.classList.remove('active');
+                const onclick = item.getAttribute('onclick');
+                if (onclick && onclick.includes(currentSection)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        // Enhanced navigation link handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme
+            initializeTheme();
+            
+            // Smooth scroll for all navigation links
+            document.querySelectorAll('a[href^="#"], .nav-link, .nav-link-mobile').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href')?.substring(1) || this.dataset.section;
+                    if (targetId) {
+                        scrollToSection(targetId);
+                    }
+                });
+            });
+            
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                // ESC to close sidebar
+                if (e.key === 'Escape' && sidebarOpen) {
+                    toggleSidebar();
+                }
+                
+                // ESC to close mobile menu
+                if (e.key === 'Escape') {
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
                 }
             });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
+            
+            // Add keyboard support for TOC items
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
             });
-        }, {
-            threshold: 0.1
         });
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
+        
+        // Scroll event listeners
+        let ticking = false;
+        
+        function handleScroll() {
+            updateReadingProgress();
+            highlightActiveSection();
+            
+            // Back to top button visibility
+            const backToTopButton = document.getElementById('backToTop');
             if (window.scrollY > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
@@ -527,13 +1222,38 @@
                 backToTopButton.classList.add('opacity-0', 'invisible');
                 backToTopButton.classList.remove('opacity-100', 'visible');
             }
+            
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
         });
-
-        backToTopButton.addEventListener('click', () => {
+        
+        // Back to top functionality
+        document.getElementById('backToTop').addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024 && sidebarOpen) {
+                document.querySelector('.main-content').classList.add('sidebar-open');
+            } else {
+                document.querySelector('.main-content').classList.remove('sidebar-open');
+            }
+        });
+        
+        // Print handling
+        window.addEventListener('beforeprint', () => {
+            // Ensure sidebar is closed before printing
+            if (sidebarOpen) toggleSidebar();
         });
     </script>
 </body>
