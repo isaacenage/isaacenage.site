@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/Portfolio/(.*)",
+      "destination": "/Portfolio/$1"
+    },
+    {
+      "source": "/Tools/(.*)",
+      "destination": "/Tools/$1"
+    },
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
