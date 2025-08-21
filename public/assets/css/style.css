@@ -294,29 +294,7 @@ h6 a,
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   h1,
   .h1 {
-    font-size: 38px;
-  }
-  h2,
-  .h2 {
     font-size: 32px;
-  }
-  h3,
-  .h3 {
-    font-size: 28px;
-  }
-  h4,
-  .h4 {
-    font-size: 24px;
-  }
-  h5,
-  .h5 {
-    font-size: 18px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  h1,
-  .h1 {
-    font-size: 34px;
   }
   h2,
   .h2 {
@@ -333,6 +311,28 @@ h6 a,
   h5,
   .h5 {
     font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 28px;
+  }
+  h2,
+  .h2 {
+    font-size: 24px;
+  }
+  h3,
+  .h3 {
+    font-size: 20px;
+  }
+  h4,
+  .h4 {
+    font-size: 18px;
+  }
+  h5,
+  .h5 {
+    font-size: 14px;
   }
 }
 h1,
@@ -366,8 +366,8 @@ p {
 @media only screen and (max-width: 767px) {
   p {
     margin: 0 0 20px;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 p.b1 {
@@ -11152,12 +11152,12 @@ header.header-full-width.header--sticky.sticky {
 }
 @media only screen and (max-width: 767px) {
   .demo-model .banner-model-15 .title {
-    font-size: 80px !important;
+    font-size: 64px !important;
   }
 }
 @media only screen and (max-width: 575px) {
   .demo-model .banner-model-15 .title {
-    font-size: 44px !important;
+    font-size: 36px !important;
   }
 }
 .demo-model .banner-model-15 p.disc {
@@ -12171,7 +12171,7 @@ header.header-full-width.header--sticky.sticky {
 }
 @media only screen and (max-width: 767px) {
   .tmp-banner-one-area.style-2 .inner .title {
-    font-size: 52px;
+    font-size: 42px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -12600,7 +12600,7 @@ header.header-full-width.header--sticky.sticky {
 }
 @media (min-width: 300px) {
   .banner-one-main-wrapper .banner-right-content .banner-big-text-1 {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media (min-width: 500px) {
@@ -12656,7 +12656,7 @@ header.header-full-width.header--sticky.sticky {
 }
 @media (min-width: 300px) {
   .banner-one-main-wrapper .banner-right-content .banner-big-text-2 {
-    font-size: 50px;
+    font-size: 40px;
     bottom: 30px;
   }
 }
@@ -12936,7 +12936,7 @@ header.header-full-width.header--sticky.sticky {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-four-main-wrapper .inner .title,
   .banner-six-main-wrapper .inner .title {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 9px;
   }
 }
@@ -14315,7 +14315,7 @@ header.header-full-width.header--sticky.sticky {
 }
 @media only screen and (max-width: 767px) {
   .banner-twelve-area.with-bg-image .banner-one-main-wrapper .inner .title {
-    font-size: 54px;
+    font-size: 44px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -14491,7 +14491,7 @@ header.header-full-width.header--sticky.sticky {
 }
 @media only screen and (max-width: 767px) {
   .banner-right-thumb-left-content .title {
-    font-size: 56px;
+    font-size: 46px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -17367,7 +17367,7 @@ section.clients-testimonial-area {
 }
 @media only screen and (max-width: 767px) {
   .tmp-banner-one-area.style-2 .inner .title {
-    font-size: 52px;
+    font-size: 42px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -17796,7 +17796,7 @@ section.clients-testimonial-area {
 }
 @media (min-width: 300px) {
   .banner-one-main-wrapper .banner-right-content .banner-big-text-1 {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media (min-width: 500px) {
@@ -17852,7 +17852,7 @@ section.clients-testimonial-area {
 }
 @media (min-width: 300px) {
   .banner-one-main-wrapper .banner-right-content .banner-big-text-2 {
-    font-size: 50px;
+    font-size: 40px;
     bottom: 30px;
   }
 }
@@ -18132,7 +18132,7 @@ section.clients-testimonial-area {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-four-main-wrapper .inner .title,
   .banner-six-main-wrapper .inner .title {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 9px;
   }
 }
@@ -19511,7 +19511,7 @@ section.clients-testimonial-area {
 }
 @media only screen and (max-width: 767px) {
   .banner-twelve-area.with-bg-image .banner-one-main-wrapper .inner .title {
-    font-size: 54px;
+    font-size: 44px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -19687,7 +19687,7 @@ section.clients-testimonial-area {
 }
 @media only screen and (max-width: 767px) {
   .banner-right-thumb-left-content .title {
-    font-size: 56px;
+    font-size: 46px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -21257,7 +21257,7 @@ body.loaded {
 }
 @media only screen and (max-width: 767px) {
   .latest-portfolio-custom-title {
-    font-size: 65px;
+    font-size: 48px;
   }
 }
 
